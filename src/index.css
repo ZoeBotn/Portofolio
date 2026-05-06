@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Newsreader", serif;
+  --font-sans: "Work Sans", sans-serif;
+  --font-mono: "Space Grotesk", monospace;
+
+  /* Brand Colors */
+  --color-brand-bg: #fbf9f4;
+  --color-brand-primary: #705d00;
+  --color-brand-secondary: #546347;
+  --color-brand-tertiary: #94492c;
+  --color-brand-accent: #ffd700;
+  --color-brand-accent-soft: #ffcfbf;
+  --color-brand-sage: #d5e5c2;
+  --color-brand-border: #1b1c19;
+
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-bg text-brand-border font-sans selection:bg-brand-accent-soft;
+  }
+}
+
+@layer components {
+  .retro-shadow {
+    box-shadow: 4px 4px 0px 0px var(--color-brand-tertiary);
+  }
+
+  .hover-lift {
+    @apply transition-all duration-200 hover:-translate-x-0.5 hover:-translate-y-0.5;
+    box-shadow: 4px 4px 0px 0px var(--color-brand-border);
+  }
+  
+  .hover-lift:hover {
+    box-shadow: 6px 6px 0px 0px var(--color-brand-tertiary);
+  }
+
+  .grid-bg {
+    background-size: 32px 32px;
+    background-image: radial-gradient(circle, #d0c6ab 1px, transparent 1px);
+  }
+}
